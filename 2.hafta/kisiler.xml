@@ -1,0 +1,27 @@
+<catalog>
+    <person>
+        <numara>111111</numara>
+        <adsoyad>Aleyna KAHRAMAN</adsoyad>
+        <bolum>Bilgisayar mühendisliği</bolum>
+        <sinif>4</sinif>
+    </person>
+    <person>
+        <numara>222222</numara>
+        <adsoyad>Ayşe ÇALIŞKAN</adsoyad>
+        <bolum>Kimya mühendisliği</bolum>
+        <sinif>3</sinif>
+    </person>
+    <person>
+        <numara>333333</numara>
+        <adsoyad>Semih ARSLAN</adsoyad>
+        <bolum>Makine Mühendisliği</bolum>
+        <sinif>2</sinif>
+    </person>
+    <person>
+        <numara>444444</numara>
+        <adsoyad>Mehmet ERKOÇ</adsoyad>
+        <bolum>Mimarlık</bolum>
+        <sinif>1</sinif>
+    </person>
+    <!-- Diğer kişi bilgileri buraya eklenir -->
+</catalog>
