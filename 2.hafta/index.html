@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +8,6 @@
         h1 {
             color: #b71c1c;
         }
-
         table,
         th,
         td {
@@ -22,7 +20,6 @@
         }
     </style>
 </head>
-
 <body>
     <h1>Ogrenciye Tiklanildiginda Bilgilerin Ekrana Getirilmesi</h1>
     <table id="kisiler-listesi">
@@ -92,98 +89,4 @@
     </script>
 </body>
 
-=======
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Kişiler</title>
-    <style>
-        /* CSS ile sayfa tasarımı şekillendirilebilir */
-        h1 {
-            color: #b71c1c;
-        }
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-
-        th,
-        td {
-            padding: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Ogrenciye Tiklanildiginda Bilgilerin Ekrana Getirilmesi</h1>
-    <table id="kisiler-listesi">
-        <thead>
-            <tr>
-                <th>Numara</th>
-                <th>Ad Soyad</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Kişilerin listesi burada görüntülenecek -->
-        </tbody>
-    </table>
-    <div style="color: #d32f2f;" id="kisi-detay">
-        <!-- Kişi detayları burada görüntülenecek -->
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var xhttp = new XMLHttpRequest();
-
-            xhttp.open("GET", "kisiler.xml", true);
-            xhttp.send();
-
-            xhttp.onreadystatechange = function () {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    var xmlDoc = xhttp.responseXML;
-                    var kisiler = xmlDoc.getElementsByTagName("person");
-
-                    var kisilerListesi = document.querySelector("#kisiler-listesi tbody");
-
-                    for (var i = 0; i < kisiler.length; i++) {
-                        var numara = kisiler[i].getElementsByTagName("numara")[0].textContent;
-                        var adsoyad = kisiler[i].getElementsByTagName("adsoyad")[0].textContent;
-
-                        var row = kisilerListesi.insertRow(i);
-                        var cell1 = row.insertCell(0);
-                        var cell2 = row.insertCell(1);
-                        cell1.innerHTML = numara;
-                        cell2.innerHTML = adsoyad;
-
-                        // Özgün "bolum" ve "sinif" değerlerini sakla
-                        row.dataset.bolum = kisiler[i].getElementsByTagName("bolum")[0].textContent;
-                        row.dataset.sinif = kisiler[i].getElementsByTagName("sinif")[0].textContent;
-
-                        row.onclick = function () {
-                            var numara = this.cells[0].textContent;
-                            var adsoyad = this.cells[1].textContent;
-                            var bolum = this.dataset.bolum; // Özgün "bolum" değerini kullan
-                            var sinif = this.dataset.sinif; // Özgün "sinif" değerini kullan
-
-                            gosterKisi(numara, adsoyad, bolum, sinif);
-                        };
-                    }
-                }
-            };
-
-            function gosterKisi(numara, adsoyad, bolum, sinif) {
-                var kisiDetay = document.getElementById("kisi-detay");
-                kisiDetay.innerHTML = "<h2>Kisi Detaylari</h2>";
-                kisiDetay.innerHTML += "<p><strong>Ad Soyad:</strong> " + adsoyad + "</p>";
-                kisiDetay.innerHTML += "<p><strong>Numara:</strong> " + numara + "</p>";
-                kisiDetay.innerHTML += "<p><strong>Bölüm:</strong> " + bolum + "</p>";
-                kisiDetay.innerHTML += "<p><strong>Sınıf:</strong> " + sinif + "</p>";
-            }
-        });
-
-    </script>
-</body>
-
->>>>>>> c98ac2e1cb1ac78473d5819e77c62ec0a41b0658
 </html>
